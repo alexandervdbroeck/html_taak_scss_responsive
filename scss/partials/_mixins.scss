@@ -1,0 +1,43 @@
+/* mixins bij oefening Fotografie */
+
+// Font
+
+@mixin font(
+    $fontweight: 300, 
+    $fontsize: 100%, 
+    $fontfamily: $hoofdfont, 
+    $fontstyle: normal, 
+    $lineheight: 1.6, 
+    $textalign: left, 
+    $letterspacing: 0
+    ) {
+    font: {
+        weight: $fontweight;
+        size: $fontsize;
+        family: $fontfamily;
+        style: $fontstyle;
+    }
+    line-height: $lineheight;
+    text-align: $textalign;
+    letter-spacing: $letterspacing;
+}
+
+// Flex
+
+@mixin flex(
+    $richting: row,
+    $hoofdas: flex-start,
+    $kruisas: flex-start
+    ) {
+    display: flex;
+    flex-direction: $richting;
+    justify-content: $hoofdas;
+    align-items: $kruisas;
+}
+
+
+
+
+
+
+

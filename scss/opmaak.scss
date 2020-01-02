@@ -1,0 +1,289 @@
+/* SCSS bij oefening Fotografie */
+
+@import
+    "partials/reset", "partials/variables", "partials/mixins",
+/*  import kan in 1 command gebreuren*/
+    "https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap",
+    "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+
+html{scroll-behavior: smooth;}
+
+body {
+    @include font;
+    background: $licht;
+}
+
+div.responsive-image {
+    img { width: 100%; }
+}
+
+h1 {
+    @include font(300, 3rem, $hoofdfont, normal, 1.7, center, .2em);
+}
+
+h2 {
+    @include font(400, 1.8rem, $hoofdfont, normal, 1.5, center, .1em);
+    color: $donker;
+    padding-top: .3em;
+}
+
+p {
+    &.hoofding {
+        @include font(300, .8rem, $hoofdfont, normal, 1.6, center, .3em);
+        text-transform: uppercase;
+        border-bottom: 1px solid $licht;
+        padding-bottom: 1em;
+    }
+
+    &:not(.hoofding) {
+        text-align: left;
+        margin: 2em 0;
+    }
+}
+
+a{
+    text-decoration: none;
+    color: red;
+    &:hover {text-decoration: underline}
+}
+
+.container {
+    max-width: $breed-scherm;
+    margin: 0 auto;
+}
+
+// stijling van de link naar de bovenkant van de pagina
+#goToTop{
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background: $zwart;
+    color: $wit;
+    font-size: 3rem;
+    padding: 0 .5em;
+}
+
+// Mainheader -----------------------
+
+header.mainheader {
+                                            /* fixed is een property om uw achergrond vast te pinnen (backgr-attachment: fixed*/
+  //  background:parallax
+    color: $licht;
+}
+
+header.mainheader {
+    .overlay {
+        height: 100vh;
+        background: rgba($zwart,.3);
+        @include flex(column, center, center);
+    }
+
+    p {
+        border-bottom: 1px solid $licht;
+        padding-bottom: 2em;
+        margin-bottom: 2em;
+        @include font(300, 100%, $hoofdfont, normal, 1.7, center, .3em);
+        text-transform: uppercase;
+
+        span { font-weight: 500; }
+    }
+}
+
+/*-----------------------SECTION---1--------------------------*/
+
+section.section-one {
+    padding: 3em 1.5em;
+
+    article {
+        background: $wit;
+        margin-bottom: 2em;
+
+        &:last-of-type { margin: 0; }
+    }
+
+    .content {
+        padding: 1em 2em;
+        text-align: center;
+        color: $medium;
+
+
+    }
+
+    button {
+        border: 2px solid $licht;
+        padding: 1em;
+        color: $medium;
+        text-transform: uppercase;
+        font-weight: 400;
+        background: $wit;
+        cursor: pointer;
+        transition: background 500ms;
+
+        &:hover {
+            background: $donker;
+        }
+    }
+}
+
+@media screen and (min-width: $medium ){
+    section.section-one {
+        display: grid;
+        grid-template: auto/1fr 1fr;
+        grid-gap: 4%;
+    }
+
+
+}
+
+
+
+/*------------------------------SECTION 2--------------------------- */
+
+
+
+section.section-two{
+    //background:  is parallax
+    color:$licht;
+    //background-attachment: ;  (zie background samengestelde stijl
+    padding: 3em 1.5em;
+    h2{ color: $licht};
+
+}
+
+/*------------------------------SECTION 3--------------------------- */
+
+section.section-tree{
+    color:$medium;
+    padding: 3em 1.5em;
+
+    h2 {margin-bottom: .7em}
+
+    .hoofding{border-bottom-color: $medium}
+}
+
+ul.gallery {
+    img{
+        max-width: 100%;
+        background: $wit;
+        padding: 1em;
+        margin: 1em 0;
+    }
+}
+@media screen and (min-width: $medium-scherm){
+    ul.gallery {
+        display: grid;
+        grid-template: auto/1fr 1fr;
+        grid-gap: 4%;
+    }
+
+
+}
+
+/*------------------------Mainfooter------------------------------------*/
+
+
+footer.mainfooter{
+    background: $donker;
+    color:  $medium;
+    padding: 3em 2em;
+    text-align: center;
+
+    ul{
+        &.social{
+            li{
+                display: inline;
+                font-size: 2rem;
+                padding: 0 .2em;
+            }
+        }
+    }
+    a{
+        color: $medium;
+        transition: all 500ms ease;
+        &:hover{
+            text-decoration: none;
+            color: $wit;
+        }
+    }
+    p {
+
+        text-align: center;
+    }
+}
+
+
+/*------------------Navigatie-------------------------------------------------------*/
+
+a[href="#menu"]{}
+
+a.menu{
+    display: block;
+    //door fixed blijft hij bovenan staaan , anders absolute gebruiken
+    position: fixed;
+    top: 0;
+    right: 0;
+    // zeker zijn dat hij bovenaan staat
+    z-index: 999;
+    background: $zwart;
+    width: 60px;
+    height: 60px;
+    color:$licht;
+    transition: all 500ms ease;
+    @include font(400, 1.5rem, $hoofdfont, normal, 60px, center, 0);
+    &:hover{
+        background: $accent;}
+
+}
+
+nav.mainnav{
+    position: fixed;
+    top: 0;
+    right: 0;
+
+}
+
+.links{
+    position:absolute;
+    top: 0 ;
+    right: -300px;  // buiten beeld zetten
+    background: $zwart;
+    width: 300px;
+    height: 100vh;
+    padding: 4em 1em ;
+    transition: right 700ms ease-out;
+
+    a{
+        display: block;
+        background: $donker;
+        padding: 1em;
+        margin-bottom: 1px;
+        transition: all 500ms;
+        color: $licht;
+
+        &:hover{
+            background: $medium;
+            text-decoration: none;
+        }
+    }
+
+}
+
+.open {
+    right: 0;
+ }// class voor openen navigatie vanuit JQuery
+
+
+
+/*---------------Bugfixes Uphone/Ipad------------------------------------------------*/
+
+@media only screen and(min-device-width: 320px) and (max-device-width: 1366px ){
+    header.mainheader {
+        height: calc(110vh - 50px);
+        background-size:none;
+        background-attachment: scroll;
+
+    }
+
+}

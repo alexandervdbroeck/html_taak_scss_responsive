@@ -1,0 +1,307 @@
+/* SCSS bij oefening Fotografie */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap";
+@import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, nav ul, form ul,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+nav ul,
+form ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/* Extra stijlen ---------------------------------------------- */
+/* Padding fix */
+* {
+  box-sizing: border-box; }
+
+/* List fix */
+.list-unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+/* Float fix */
+.floatfix {
+  overflow: hidden;
+  clear: left;
+  zoom: 1;
+  _overflow: visible; }
+
+/* Image fix */
+img {
+  display: block; }
+
+/* Witruimte verwijderen */
+/* variables bij oefening Fotografie */
+/* mixins bij oefening Fotografie */
+html {
+  scroll-behavior: smooth; }
+
+body {
+  font-weight: 300;
+  font-size: 100%;
+  font-family: Poppins, Arial, sans-serif;
+  font-style: normal;
+  line-height: 1.6;
+  text-align: left;
+  letter-spacing: 0;
+  background: #F1F1F1; }
+
+div.responsive-image img {
+  width: 100%; }
+
+h1 {
+  font-weight: 300;
+  font-size: 3rem;
+  font-family: Poppins, Arial, sans-serif;
+  font-style: normal;
+  line-height: 1.7;
+  text-align: center;
+  letter-spacing: 0.2em; }
+
+h2 {
+  font-weight: 400;
+  font-size: 1.8rem;
+  font-family: Poppins, Arial, sans-serif;
+  font-style: normal;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #333;
+  padding-top: .3em; }
+
+p.hoofding {
+  font-weight: 300;
+  font-size: 0.8rem;
+  font-family: Poppins, Arial, sans-serif;
+  font-style: normal;
+  line-height: 1.6;
+  text-align: center;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #F1F1F1;
+  padding-bottom: 1em; }
+p:not(.hoofding) {
+  text-align: left;
+  margin: 2em 0; }
+
+a {
+  text-decoration: none;
+  color: red; }
+  a:hover {
+    text-decoration: underline; }
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto; }
+
+#goToTop {
+  cursor: pointer;
+  display: none;
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background: black;
+  color: white;
+  font-size: 3rem;
+  padding: 0 .5em; }
+
+header.mainheader {
+  /* fixed is een property om uw achergrond vast te pinnen (backgr-attachment: fixed*/
+  color: #F1F1F1; }
+
+header.mainheader .overlay {
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+header.mainheader p {
+  border-bottom: 1px solid #F1F1F1;
+  padding-bottom: 2em;
+  margin-bottom: 2em;
+  font-weight: 300;
+  font-size: 100%;
+  font-family: Poppins, Arial, sans-serif;
+  font-style: normal;
+  line-height: 1.7;
+  text-align: center;
+  letter-spacing: 0.3em;
+  text-transform: uppercase; }
+  header.mainheader p span {
+    font-weight: 500; }
+
+/*-----------------------SECTION---1--------------------------*/
+section.section-one {
+  padding: 3em 1.5em; }
+  section.section-one article {
+    background: white;
+    margin-bottom: 2em; }
+    section.section-one article:last-of-type {
+      margin: 0; }
+  section.section-one .content {
+    padding: 1em 2em;
+    text-align: center;
+    color: #999; }
+  section.section-one button {
+    border: 2px solid #F1F1F1;
+    padding: 1em;
+    color: #999;
+    text-transform: uppercase;
+    font-weight: 400;
+    background: white;
+    cursor: pointer;
+    transition: background 500ms; }
+    section.section-one button:hover {
+      background: #333; }
+
+@media screen and (min-width: 600px) {
+  section.section-one {
+    display: grid;
+    grid-template: auto/1fr 1fr;
+    grid-gap: 4%; } }
+/*------------------------------SECTION 2--------------------------- */
+section.section-two {
+  color: #F1F1F1;
+  padding: 3em 1.5em; }
+  section.section-two h2 {
+    color: #F1F1F1; }
+
+/*------------------------------SECTION 3--------------------------- */
+section.section-tree {
+  color: #999;
+  padding: 3em 1.5em; }
+  section.section-tree h2 {
+    margin-bottom: .7em; }
+  section.section-tree .hoofding {
+    border-bottom-color: #999; }
+
+ul.gallery img {
+  max-width: 100%;
+  background: white;
+  padding: 1em;
+  margin: 1em 0; }
+
+@media screen and (min-width: 600px) {
+  ul.gallery {
+    display: grid;
+    grid-template: auto/1fr 1fr;
+    grid-gap: 4%; } }
+/*------------------------Mainfooter------------------------------------*/
+footer.mainfooter {
+  background: #333;
+  color: #999;
+  padding: 3em 2em;
+  text-align: center; }
+  footer.mainfooter ul.social li {
+    display: inline;
+    font-size: 2rem;
+    padding: 0 .2em; }
+  footer.mainfooter a {
+    color: #999;
+    transition: all 500ms ease; }
+    footer.mainfooter a:hover {
+      text-decoration: none;
+      color: white; }
+  footer.mainfooter p {
+    text-align: center; }
+
+/*------------------Navigatie-------------------------------------------------------*/
+a.menu {
+  display: block;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+  background: black;
+  width: 60px;
+  height: 60px;
+  color: #F1F1F1;
+  transition: all 500ms ease;
+  font-weight: 400;
+  font-size: 1.5rem;
+  font-family: Poppins, Arial, sans-serif;
+  font-style: normal;
+  line-height: 60px;
+  text-align: center;
+  letter-spacing: 0; }
+  a.menu:hover {
+    background: red; }
+
+nav.mainnav {
+  position: fixed;
+  top: 0;
+  right: 0; }
+
+.links {
+  position: absolute;
+  top: 0;
+  right: -300px;
+  background: black;
+  width: 300px;
+  height: 100vh;
+  padding: 4em 1em;
+  transition: right 700ms ease-out; }
+  .links a {
+    display: block;
+    background: #333;
+    padding: 1em;
+    margin-bottom: 1px;
+    transition: all 500ms;
+    color: #F1F1F1; }
+    .links a:hover {
+      background: #999;
+      text-decoration: none; }
+
+.open {
+  right: 0; }
+
+/*---------------Bugfixes Uphone/Ipad------------------------------------------------*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 1366px) {
+  header.mainheader {
+    height: calc(110vh - 50px);
+    background-size: none;
+    background-attachment: scroll; } }
+
+/*# sourceMappingURL=opmaak.css.map */
